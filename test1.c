@@ -6,7 +6,7 @@
 int main()
 {
 	int num;
-	scanf("%d",&num);
+	a: scanf("%d",&num);
 	if(num==1)
 	{
 		printf("hello world");
@@ -14,6 +14,8 @@ int main()
 	else
 	{
 		printf("false");
+		goto a;
 	}
+	
 	return 0;
 }
