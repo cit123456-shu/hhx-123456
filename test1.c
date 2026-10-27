@@ -5,8 +5,14 @@
 
 int main()
 {
-	char s[100]="上海大学";
-	char c='h';
-	printf("%s,%c",s,c);
+	printf("Please select I number to be printed:\n");
+	int i;
+	scanf("%d",&i);
+	int arr[100]={1,1};
+	for(int j=2;j<=i-1;j++)
+	{
+		arr[j]=arr[j-1]+arr[j-2];
+	}
+	printf("The number is %d",arr[i-1]);
 	return 0;
 }

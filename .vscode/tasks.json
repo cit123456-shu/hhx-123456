@@ -20,6 +20,23 @@
 			],
 			"group": "build",
 			"detail": "编译器: D:/x86_64-8.1.0-release-posix-seh-rt_v6-rev0/mingw64/bin/gcc.exe"
+		},
+		{
+			"label": "编译并运行",
+			"type": "shell",
+			"command": "gcc -g \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" ; & \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated",
+				"clear": true,
+				"focus": true,
+				"showReuseMessage": false
+			},
+			"problemMatcher": []
 		}
 	]
 }
