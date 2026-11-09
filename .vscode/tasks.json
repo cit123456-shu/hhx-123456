@@ -8,6 +8,7 @@
 			"args": [
 				"-fdiagnostics-color=always",
 				"-g",
+				"-fexec-charset=GBK",
 				"${file}",
 				"-o",
 				"${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -24,7 +25,7 @@
 		{
 			"label": "编译并运行",
 			"type": "shell",
-			"command": "gcc -g \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" ; & \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
+			"command": "gcc -g -fexec-charset=GBK \"${file}\" -o \"${fileDirname}\\${fileBasenameNoExtension}.exe\" ; & \"${fileDirname}\\${fileBasenameNoExtension}.exe\"",
 			"group": {
 				"kind": "build",
 				"isDefault": true
