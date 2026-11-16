@@ -1,21 +1,66 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-#include<math.h>
-#include<string.h>
+// #include<stdio.h>
+// #include<stdlib.h>
+// #include<time.h>
+// #include<math.h>
+// #include<string.h>
+
+// int main()
+// {
+	
+// 	return 0;
+// }
+#include <stdio.h>
+
+void Print_Factorial ( const int N );
 
 int main()
 {
-	int sit=remove("C:\\Users\\37750\\Desktop\\鹰角启动器.lnk");
-	int sit1=remove("C:\\Users\\37750\\Desktop\\明日方舟终末地.lnk");
-	int sit2=remove("C:\\Users\\37750\\Desktop\\明日方舟.lnk");
-	if(!sit||!sit1||!sit2)
+    int N;
+    
+    scanf("%d", &N);
+    Print_Factorial(N);
+    return 0;
+}
+
+void Print_Factorial ( const int N )
+{
+	int n=N;
+	int weishu=1;
+	if(n<0||n>1000)
 	{
-		printf("恭喜你，你的鹰角已经滚蛋了！老实玩原神吧！");
+		printf("Invalid input");
+		return;
 	}
-	else
+	int i=1;
+	int arr[3000]={1};
+	while(n!=0)
 	{
-		printf("还活着？");
+		for(int j=0;j<weishu;j++)
+		{
+			arr[j]*=i;
+		}
+		for(int j=0;j<weishu;j++)
+		{
+			if(arr[j]>=10)
+			{
+				arr[j+1]+=arr[j]/10;
+				arr[j]%=10;
+			}
+		}
+		while(arr[weishu]>0)
+		{
+			if(arr[weishu]>=10)
+			{
+				arr[weishu+1]+=arr[weishu]/10;
+				arr[weishu]%=10;
+			}
+			weishu++;
+		}
+		n--;
+		i++;
 	}
-	return 0;
+	for(int j=weishu-1;j>=0;j--)
+	{
+		printf("%d",arr[j]);
+	}
 }
