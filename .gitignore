@@ -16,3 +16,13 @@ desktop.ini
 # 临时文件
 *.tmp
 *.log
+# ===== Visual Studio 生成（不提交）=====
+x64/
+Debug/
+Release/
+.vs/
+*.vcxproj.user
+*.obj
+*.pdb
+*.ilk
+*.tlog
