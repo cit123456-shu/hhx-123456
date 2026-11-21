@@ -47,6 +47,7 @@ int main()
 			insert(list, val,pos);
 			break;
 		}
+		printf("hello?");
 	}
 	free(list->arr);
 	free(list);
