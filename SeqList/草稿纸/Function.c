@@ -28,7 +28,7 @@ void push_back(SeqList* list, int val)
 {
 	if (list->size >= list->capacity)
 	{
-		printf("fail to push\n");
+		printf("put failed, space full\n");
 		return;
 	}
 	else
@@ -60,5 +60,19 @@ void push_head(SeqList* list, int val)
 		list->arr[i] = list->arr[i - 1];
 	}
 	list->arr[0] = val;
+	list->size++;
+}
+
+void insert(SeqList* list, int val, int pos)
+{
+	if (list->size >= list->capacity)
+	{
+		printf("put failed, space full\n");
+	}
+	for (int i = list->size;i >= pos;i--)
+	{
+		list->arr[i + 1] = list->arr[i];
+	}
+	list->arr[pos] = val;
 	list->size++;
 }

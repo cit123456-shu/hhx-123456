@@ -39,6 +39,14 @@ int main()
 			push_back(list, val);
 			break;
 		}
+		case 4:
+		{
+			printf("插入元素，输入插入元素及插入位置：");
+			int val,pos;
+			scanf("%d %d", &val,&pos);
+			insert(list, val,pos);
+			break;
+		}
 	}
 	free(list->arr);
 	free(list);
