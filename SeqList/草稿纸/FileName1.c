@@ -1,55 +1,40 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include"headfile.h"
 
-
+typedef int DATA;
+typedef struct LNode
+{
+	DATA data;
+	struct LNode* next;
+}LNode;
 
 int main()
 {
-	SeqList*list=createSeqList();
-	if (!list)
-	{
-		printf("list is NULL");
-		return 1;
-	}
 	int n;
 	scanf("%d", &n);
-	switch (n)
+	LNode* L = (LNode*)malloc(sizeof(LNode));
+	LNode* tail = L;
+	L->data = n;
+	L->next = NULL;
+	for (int i = 0;i < n;i++)
 	{
-		case 1:
-		{
-			printf("遍历顺序表\n");
-			show_list(list);
-			break;
-		}
-		case 2:
-		{
-			printf("头部插入元素，输入插入元素：");
-			int val;
-			scanf("%d", &val);
-			push_head(list, val);
-			break;
-		}
-		case 3:
-		{
-			printf("尾部插入元素，输入插入元素：");
-			int val;
-			scanf("%d", &val);
-			push_back(list, val);
-			break;
-		}
-		case 4:
-		{
-			printf("插入元素，输入插入元素及插入位置：");
-			int val,pos;
-			scanf("%d %d", &val,&pos);
-			insert(list, val,pos);
-			break;
-		}
-		printf("hello?");
+		LNode* s = malloc(sizeof(LNode));
+		scanf("%d", &s->data);
+		s->next = NULL;
+		tail->next = s;
+		tail = s;
 	}
-	free(list->arr);
-	free(list);
+	for (LNode* p = L->next;p != NULL;p = p->next)
+	{
+		printf("%d ", p->data);
+	}
+	LNode* p = L;
+	while (p != NULL)
+	{
+		LNode* temp = p->next;
+		free(p);
+		p = temp;
+	}
 	return 0;
 }

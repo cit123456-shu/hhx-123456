@@ -18,13 +18,5 @@
     <ClCompile Include="FileName1.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Function.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="headfile.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
